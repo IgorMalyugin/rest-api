@@ -1,13 +1,12 @@
 package in.reqres;
 
-import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.is;
 
-public class HomeWork {
+public class HomeWork extends BaseTest{
 
 
     @Test
@@ -16,7 +15,7 @@ public class HomeWork {
                 .log().method()
                 .log().uri()
                 .when()
-                .get("https://reqres.in/api/users?page=2")
+                .get("/users?page=2")
                 .then()
                 .log().status()
                 .log().body()
@@ -34,7 +33,7 @@ public class HomeWork {
                 .contentType(JSON)
                 .body(createUser)
                 .when()
-                .post("https://reqres.in/api/users")
+                .post("/users")
                 .then()
                 .log().status()
                 .log().body()
@@ -53,7 +52,7 @@ public class HomeWork {
                 .contentType(JSON)
                 .body(updateUser)
                 .when()
-                .put("https://reqres.in/api/users/2")
+                .put("/users/2")
                 .then()
                 .log().status()
                 .log().body()
@@ -72,7 +71,7 @@ public class HomeWork {
                 .contentType(JSON)
                 .body(pathUser)
                 .when()
-                .patch("https://reqres.in/api/users/2")
+                .patch("/users/2")
                 .then()
                 .log().status()
                 .log().body()
@@ -86,7 +85,7 @@ public class HomeWork {
                 .log().method()
                 .log().uri()
                 .when()
-                .delete("https://reqres.in/api/users/2")
+                .delete("/users/2")
                 .then()
                 .log().status()
                 .statusCode(204);

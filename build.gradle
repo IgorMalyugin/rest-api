@@ -20,7 +20,8 @@ dependencies {
     testImplementation(
             'org.junit.jupiter:junit-jupiter:5.9.3',
             "org.slf4j:slf4j-simple:$slf4jVersion",
-            'io.rest-assured:rest-assured:5.3.0'
+            'io.rest-assured:rest-assured:5.3.0',
+            "com.codeborne:selenide:$selenideVersion"
     )
 }
 
