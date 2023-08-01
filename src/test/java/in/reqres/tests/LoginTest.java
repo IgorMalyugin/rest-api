@@ -1,4 +1,4 @@
-package in.reqres;
+package in.reqres.tests;
 
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
